@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "singularName": "menu",
+    "pluralName": "menus",
+    "displayName": "Menu"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "string"
+    },
+    "isAvailable": {
+      "type": "boolean"
+    },
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "menu"
+    }
+  }
+}

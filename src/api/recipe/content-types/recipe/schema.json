@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "singularName": "recipe",
+    "pluralName": "recipes",
+    "displayName": "Recipe"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "menu": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::menu.menu",
+      "inversedBy": "recipes"
+    },
+    "ingredient": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::ingredient.ingredient",
+      "inversedBy": "recipes"
+    },
+    "quantity": {
+      "type": "integer"
+    }
+  }
+}
